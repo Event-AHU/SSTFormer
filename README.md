@@ -1,2 +1,6 @@
-# HSANet_HAR
-Official pytorch implementation of "Event Stream based Human Action Recognition via Hybrid Spiking Convolutional Neural Network"
+# SCTFormer
+Official pytorch implementation of "Bridge Spiking Convolution and Temporal Transformer for RGB-Event based Classification"
+
+
+
+
