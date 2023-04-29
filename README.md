@@ -4,7 +4,7 @@ Official pytorch implementation of "Bridge Spiking Convolution and Temporal Tran
 
 
 ** Reference: 
-* **Zorro: the masked multimodal transformer**, Adria Recasens et al. [[Paper](https://arxiv.org/pdf/2301.09595.pdf)] 
+* **Zorro: the masked multimodal transformer**[J]. Recasens A, Lin J, Carreira J, et al. arXiv preprint arXiv:2301.09595, 2023. [[Paper](https://arxiv.org/pdf/2301.09595.pdf)] 
 * **"Spike-flownet: event-based optical flow estimation with energy-efficient hybrid neural networks."** Lee, Chankyu, et al.  Computer Vision–ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part XXIX 16. Springer International Publishing, 2020. 
 [[Paper](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123740358.pdf)] 
 [[Code](https://github.com/chan8972/Spike-FlowNet)]
