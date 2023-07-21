@@ -1,7 +1,7 @@
 <div align="center">
 <img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/pokerevent2.png" width="600">
   
-**A New Benchmark Dataset \& A SNN-ANN Framework for RGB-Event based Pattern Recognition **
+**A New Benchmark Dataset \& A SNN-ANN Framework for RGB-Event based Pattern Recognition**
 
 ------
 
