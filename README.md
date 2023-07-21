@@ -1,3 +1,12 @@
+<div align="center">
+<img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/pokerevent.png" width="600">
+------
+</div>
+
+
+
+
+
 # SCTFormer
 Official pytorch implementation of "Bridge Spiking Convolution and Temporal Transformer for RGB-Event based Classification"
 
