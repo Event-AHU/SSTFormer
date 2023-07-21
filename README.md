@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/pokerevent.png" width="600">
+<img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/pokerevent2.png" width="600">
 ------
 </div>
 
