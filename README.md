@@ -1,8 +1,17 @@
 <div align="center">
 <img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/pokerevent2.png" width="600">
+**A Benchmark Dataset for RGB-Event based Pattern Recognition \& A New SNN-ANN Framework**
 ------
-</div>
 
+<p align="center">
+  • <a href="https://sites.google.com/view/viseventtrack/">Project</a> •
+  <a href="https://arxiv.org/abs/2108.05015">arXiv</a> • 
+  <a href="https://github.com/wangxiao5791509/RGB-DVS-SOT-Baselines">Baselines</a> •
+  <a href="https://youtu.be/U4uUjci9Gjc">DemoVideo</a> • 
+  <a href="https://youtu.be/vGwHI2d2AX0">Tutorial</a> •
+</p>
+
+</div>
 
 
 
