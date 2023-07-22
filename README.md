@@ -57,7 +57,7 @@ git clone https://github.com/open-mmlab/mmaction2.git
 cd mmaction2
 pip3 install -e .
 ```
-## Tutorial on Training and Testing
+## Tutorial on Training 
 
 ```
 SSTFormer:
@@ -77,7 +77,7 @@ sh train.sh
 
 
 ## Acknowledgement 
-Our code is implemented based on ***. 
+Our code is implemented based on <a href="https://github.com/open-mmlab/mmaction2">mmaction2</a> ,  <a href="https://github.com/zhouchenlin2096/Spikingformer">Spikingformer</a>
 
 
 
