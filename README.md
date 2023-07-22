@@ -32,7 +32,7 @@ Event camera-based pattern recognition is a newly arising research topic in rece
 
 
 ## ANN-SNN Framework for RGB-Event based Recognition 
-<img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/framework_0505.jpg" width="800">  
+<img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/framework0722.jpg" width="800">  
 
 
 ## Download PokerEvent Dataset 
