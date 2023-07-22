@@ -47,6 +47,15 @@ Event camera-based pattern recognition is a newly arising research topic in rece
 
 ## Environment Setting 
 
+conda create -n event  python=3.8 -y
+conda activate event
+pip3 install openmim
+mim install mmcv-full
+mim install mmdet  # optional
+mim install mmpose  # optional
+git clone https://github.com/open-mmlab/mmaction2.git
+cd mmaction2
+pip3 install -e .
 
 ## Tutorial on Training and Testing
 
