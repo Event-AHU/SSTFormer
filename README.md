@@ -60,11 +60,13 @@ pip3 install -e .
 ## Tutorial on Training and Testing
 
 ```
+SSTFormer : sh train_SSTFormer.sh
+
+cd SpikingF_MST
+SpikingF-MST : sh train.sh 
+
 ```
 
-
-```
-```
 
 ## Experimental Results and Visualization 
 <img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/SCNN_feature_map.jpg" width="800">
