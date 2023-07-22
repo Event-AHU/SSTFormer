@@ -60,10 +60,12 @@ pip3 install -e .
 ## Tutorial on Training and Testing
 
 ```
-SSTFormer : sh train_SSTFormer.sh
+SSTFormer:
+sh train_SSTFormer.sh
 
+SpikingF-MST:
 cd SpikingF_MST
-SpikingF-MST : sh train.sh 
+sh train.sh 
 
 ```
 
