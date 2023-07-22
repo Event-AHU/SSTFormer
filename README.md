@@ -57,14 +57,15 @@ git clone https://github.com/open-mmlab/mmaction2.git
 cd mmaction2
 pip3 install -e .
 ```
-## Tutorial on Training 
+## Train & Test
 ```
 SSTFormer:
-sh train_SSTFormer.sh
+python tools/train.py configs/recognition/SSTFormer/SSTFormer.py --work-dir work_dirs/SSTFormer  --seed 0 --deterministic
+python tools/test.py configs/recognition/SSTFormer/SSTFormer.py  work_dirs/SSTFormer/checkpoint --eval top_k_accuracy 
 
 SpikingF-MST:
 cd SpikingF_MST
-sh train.sh 
+sh train.sh
 ```
 
 
