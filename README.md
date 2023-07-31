@@ -6,11 +6,11 @@
 ------
 
 <p align="center">
-  • <a href="https://sites.google.com/view/viseventtrack/">Project</a> •
-  <a href="https://arxiv.org/abs/2108.05015">arXiv</a> • 
-  <a href="https://github.com/wangxiao5791509/RGB-DVS-SOT-Baselines">Baselines</a> •
-  <a href="https://youtu.be/U4uUjci9Gjc">DemoVideo</a> • 
-  <a href="https://youtu.be/vGwHI2d2AX0">Tutorial</a> •
+  • <a href="">Project</a> •
+  <a href="">arXiv</a> • 
+  <a href="">Baselines</a> •
+  <a href="">DemoVideo</a> • 
+  <a href="">Tutorial</a> •
 </p>
 
 </div>
@@ -19,8 +19,7 @@
 
 
 # SSTFormer
-Official PyTorch implementation of "SSTFormer: Bridging Spiking Neural Network and Memory Support Transformer for Frame-Event based Recognition", Xiao Wang, Zongzhen Wu, Yao Rong, Lin Zhu,
-Bo Jiang, Jin Tang, Yonghong Tian. 
+Official PyTorch implementation of "**SSTFormer: Bridging Spiking Neural Network and Memory Support Transformer for Frame-Event based Recognition**", Xiao Wang, Zongzhen Wu, Yao Rong, Lin Zhu, Bo Jiang, Yonghong Tian, Jin Tang. [[Paper]()]
 
 
 
@@ -41,7 +40,7 @@ Event camera-based pattern recognition is a newly arising research topic in rece
 ```
 * BaiduYun:
 
-* DropBox: 
+* DropBox: https://www.dropbox.com/scl/fo/w658kwhfi3qa8naul3eeb/h?rlkey=zjn4b69wa1e3mhid8p6hh8v75&dl=0
 ```
 
 
