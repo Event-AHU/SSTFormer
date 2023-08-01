@@ -69,7 +69,9 @@ sh train.sh
 
 
 ## Acknowledgement 
-Our code is implemented based on <a href="https://github.com/open-mmlab/mmaction2">MMAction2</a> , <a href="https://github.com/zhouchenlin2096/Spikingformer">Spikingformer</a> .
+Our code is implemented based on 
+<a href="https://github.com/open-mmlab/mmaction2">MMAction2</a>, 
+<a href="https://github.com/zhouchenlin2096/Spikingformer">Spikingformer</a>.
 
 
 
