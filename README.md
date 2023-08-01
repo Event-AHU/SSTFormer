@@ -32,7 +32,7 @@ Event camera-based pattern recognition is a newly arising research topic in rece
 <img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/PokerEvent_samples.jpg" width="800"> 
 
 ```
-* BaiduYun: 链接：https://pan.baidu.com/s/1vQnHZUqQ1o58SajvtE-uHw?pwd=AHUE 提取码：AHUE 
+* BaiduYun (178GB): 链接：https://pan.baidu.com/s/1vQnHZUqQ1o58SajvtE-uHw?pwd=AHUE 提取码：AHUE 
 
 * DropBox (178GB): https://www.dropbox.com/scl/fo/w658kwhfi3qa8naul3eeb/h?rlkey=zjn4b69wa1e3mhid8p6hh8v75&dl=0
 ```
