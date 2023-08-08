@@ -13,7 +13,8 @@
 
 
 # SSTFormer
-Official PyTorch implementation of "**SSTFormer: Bridging Spiking Neural Network and Memory Support Transformer for Frame-Event based Recognition**", Xiao Wang, Zongzhen Wu, Yao Rong, Lin Zhu, Bo Jiang, Yonghong Tian, Jin Tang. [[Paper]()]
+Official PyTorch implementation of **SSTFormer: Bridging Spiking Neural Network and Memory Support Transformer for Frame-Event based Recognition**, 
+Xiao Wang, Zongzhen Wu, Yao Rong, Lin Zhu, Bo Jiang, Jin Tang, Yonghong Tian. [[arXiv]()]
 
 
 
