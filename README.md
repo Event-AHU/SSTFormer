@@ -14,7 +14,7 @@
 
 # SSTFormer
 Official PyTorch implementation of **SSTFormer: Bridging Spiking Neural Network and Memory Support Transformer for Frame-Event based Recognition**, 
-Xiao Wang, Zongzhen Wu, Yao Rong, Lin Zhu, Bo Jiang, Jin Tang, Yonghong Tian. [[arXiv]()]
+Xiao Wang, Zongzhen Wu, Yao Rong, Lin Zhu, Bo Jiang, Jin Tang, Yonghong Tian. [[arXiv](https://arxiv.org/abs/2308.04369)]
 
 
 
@@ -78,7 +78,14 @@ Our code is implemented based on
 
 ## Reference 
 ```
-*** 
+@misc{wang2023sstformer,
+      title={SSTFormer: Bridging Spiking Neural Network and Memory Support Transformer for Frame-Event based Recognition}, 
+      author={Xiao Wang and Zongzhen Wu and Yao Rong and Lin Zhu and Bo Jiang and Jin Tang and Yonghong Tian},
+      year={2023},
+      eprint={2308.04369},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
 
 
