@@ -4,7 +4,7 @@
 model = dict(
     type='Recognizer3D',
     backbone=dict(
-        type='SCNN_GRUFORMER_BL',
+        type='SSTFormer',
         pretrained=None,
         batchNorm=True, 
         output_layers=None,
@@ -27,11 +27,7 @@ model = dict(
 
     cls_head=dict(
         type='I3DHead',
-        # num_classes=1000,
-        # num_classes=300,
         num_classes=114,
-        # num_classes=101,
-        # in_channels=4096,
         in_channels=4096,
         spatial_type=None,
         dropout_ratio=0.5,
