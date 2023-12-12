@@ -26,12 +26,12 @@ from .vit_mae import VisionTransformer
 from .x3d import X3D
 
 
-from .SCNN_GRUFORMER_BL import SCNN_GRUFORMER_BL
+from .SSTFormer import SSTFormer
 __all__ = [
     'AAGCN', 'C2D', 'C3D', 'MViT', 'MobileNetV2', 'MobileNetV2TSM',
     'OmniResNet', 'ResNet', 'ResNet2Plus1d', 'ResNet3d', 'ResNet3dCSN',
     'ResNet3dLayer', 'ResNet3dSlowFast', 'ResNet3dSlowOnly', 'ResNetAudio',
     'ResNetTIN', 'ResNetTSM', 'STGCN', 'SwinTransformer3D', 'TANet',
     'TimeSformer', 'UniFormer', 'UniFormerV2', 'VisionTransformer', 'X3D',
-    'RGBPoseConv3D','SCNN_GRUFORMER_BL'
+    'RGBPoseConv3D','SSTFormer'
 ]
