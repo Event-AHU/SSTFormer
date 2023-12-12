@@ -32,12 +32,12 @@ from mmaction.models.backbones import torchvision_resnet
 
 
 @MODELS.register_module()
-class SCNN_GRUFORMER_BL(nn.Module):
+class SSTFormer(nn.Module):
     expansion = 1
     # default_hyper_params = dict(pretrain_model_path="", crop_pad=4, pruned=True,)
     def __init__(self, pretrained=None, batchNorm=True, output_layers=None, init_std=0.05,num_heads=8,clip_n =3,
                 dim=972, clip_len=8, tau: float = 2.,threshold=0.75, init_values=None,to_device="cuda:0",batch_size=5):  
-        super(SCNN_GRUFORMER_BL, self).__init__()
+        super(SSTFormer, self).__init__()
         self.batchNorm = batchNorm
         # self.conv1 = conv_s(self.batchNorm,   8,   64, kernel_size=3, stride=1)
         self.conv1 = conv_s(self.batchNorm,   12,   64, kernel_size=3, stride=1)
