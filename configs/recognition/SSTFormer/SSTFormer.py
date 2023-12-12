@@ -1,15 +1,12 @@
 _base_ = ['../../_base_/models/SSTFormer.py', '../../_base_/default_runtime.py']
 
 
-# ##rgb_Puke100
 dataset_type = 'RawframeDataset'
-data_root = 
-data_root_val = 
-ann_file_train =
-ann_file_val = 
-ann_file_test =
-
-######################################################################################
+data_root = '.../Poker_rgbframes/'
+data_root_val = '.../Poker_rgbframes/'
+ann_file_train ='.../train_label.txt'
+ann_file_val = '.../val_label.txt'
+ann_file_test ='.../test_label.txt'
 
 file_client_args = dict(io_backend='disk')
 train_pipeline = [
