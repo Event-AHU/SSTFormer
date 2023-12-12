@@ -2,8 +2,8 @@
 import torch
 import torch.nn as nn
 import math
-from torch.nn.init import kaiming_normal_, constant_
-from .hardutils import predict_flow, crop_like, conv_s, conv, deconv, conv_s_p, conv_ac 
+from torch.nn.init import constant_
+from .hardutils import conv_s, conv, deconv
 
 import matplotlib.pyplot as plt 
 
