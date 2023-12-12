@@ -102,15 +102,9 @@ class SSTFormer(nn.Module):
         )
 
         self.snn_former_fc = nn.Sequential(
-            # nn.Linear(7936, 4096),
-            # nn.Linear(8800, 4096),
             nn.Linear(7232, 4096),
             nn.ReLU(inplace=True),
-            nn.Dropout3d(0.5),
-            # nn.Linear(4096, 4096),
-            # nn.ReLU(inplace=True),
-            # nn.Dropout3d(0.5),
-            # nn.Linear(4096, 280)
+            nn.Dropout3d(0.5)
         )
 
         self.init_values =init_values
@@ -140,7 +134,6 @@ class SSTFormer(nn.Module):
 
 
         self.resnet18_feature_extractor = torchvision_resnet.resnet18(pretrained = True)
-        # self.resnet50_feature_extractor = torchvision_resnet.resnet50(pretrained = True)
         self.conv2d_query = nn.Conv2d(in_channels=512,out_channels=4096, kernel_size=1, stride=1,padding=0)
         self.conv2d_support = nn.Conv2d(in_channels=512,out_channels=64, kernel_size=1, stride=1,padding=0)
 
@@ -173,8 +166,8 @@ class SSTFormer(nn.Module):
         return len(output_layers) == len(outputs)
 
     def forward(self, input_, output_layers=None, image_resize=240, sp_threshold=0.75):
-        rgb_input = input_[0] #torch.Size([6, 16, 260, 346, 3])torch.Size([2, 3, 16, 224, 224])
-        input = input_[1] #torch.Size([6, 16, 346, 260, 12])torch.Size([16, 346, 260, 12])
+        rgb_input = input_[0] 
+        input = input_[1] 
 
         threshold = sp_threshold
 
@@ -199,17 +192,17 @@ class SSTFormer(nn.Module):
 
         for i in range(input.shape[1]):     ## from 1 to 16 
             
-            current_input = input[:, i, :, :, :]  #torch.Size([6, 12, 346, 260])
-            current_input = F.interpolate(current_input, [image_resize, image_resize])#torch.Size([6, 12, 240, 240])
+            current_input = input[:, i, :, :, :]  
+            current_input = F.interpolate(current_input, [image_resize, image_resize])
 
             #----------------------------------------------------------------------------
 
-            current_11 = self.conv1(current_input) #torch.Size([6, 64, 240, 240])
+            current_11 = self.conv1(current_input) 
             mem_11 = mem_11 + current_11
             mem_11,current_1 =self.snn_lif1(current_11,mem_11) 
 
             current_1 = self.conv2(current_1)    
-            current_1 = self.pool(current_1) #torch.Size([6, 64, 120, 120])
+            current_1 = self.pool(current_1) 
             current_12 = self.batchNorm1(current_1)
             mem_12 = mem_12 + current_12
             mem_1_total = mem_1_total + current_12 
@@ -255,27 +248,27 @@ class SSTFormer(nn.Module):
             mem_42, out_conv4 =self.snn_lif8(current_42, mem_42)
             #----------------------------------------------------------------------------
 
-        out_conv4 = mem_4_total    ## torch.Size([6, 512, 15, 15]) 
-        out_conv3 = mem_3_total     #torch.Size([6, 256, 30, 30])
-        out_conv2 = mem_2_total     #torch.Size([6, 128, 60, 60])
+        out_conv4 = mem_4_total    
+        out_conv3 = mem_3_total     
+        out_conv2 = mem_2_total     
 
 
-        out_deconv3 = self.deconv3(out_conv4)  #torch.Size([6, 128, 30, 30])
+        out_deconv3 = self.deconv3(out_conv4)  
         concat3 = torch.cat((out_conv3, out_deconv3),1)
 
-        out_deconv2 = self.deconv2(concat3) #torch.Size([6, 128, 60, 60])
-        concat2 = torch.cat((out_conv2, out_deconv2),1) #torch.Size([6, 256, 60, 60])
+        out_deconv2 = self.deconv2(concat3) 
+        concat2 = torch.cat((out_conv2, out_deconv2),1) 
 
         ############################################################################################################
-        concat_fu = self.fu_concat_1(concat2) #torch.Size([6, 16, 60, 60])
+        concat_fu = self.fu_concat_1(concat2) 
         fusion_feature_map = self.fusion_feature_map.expand_as(concat_fu)
-        fusion_feature_map_agg = torch.cat((fusion_feature_map,concat_fu),1) #torch.Size([6, 32, 60, 60])
+        fusion_feature_map_agg = torch.cat((fusion_feature_map,concat_fu),1) 
 
         ############################################################################################################
-        fu_eventFeats = self.dcnfeat_layers(fusion_feature_map_agg)   ## torch.Size([6, 32, 14, 14])
+        fu_eventFeats = self.dcnfeat_layers(fusion_feature_map_agg)  
         fu_fea_map = fu_eventFeats[:,0:16,:,:] #torch.Size([6, 16, 14, 14])
         scnn_out = fu_eventFeats[:,16:32,:,:] #torch.Size([6, 16, 14, 14])
-        scnn_out_Feats = torch.flatten(scnn_out, start_dim=1, end_dim=3) #torch.Size([6, 3136])  ###SCNN_out
+        scnn_out_Feats = torch.flatten(scnn_out, start_dim=1, end_dim=3) 
         bottleneck_fea = self.fu_concat_2(fu_fea_map).reshape(fu_fea_map.shape[0],-1)
         ################################################################################################
         
@@ -285,16 +278,16 @@ class SSTFormer(nn.Module):
         # rgb_res_out = self.resnet50_feature_extractor(rgb_input_res).reshape( B,N,2048,8,8)
 
         if self.clip_len==16:
-            res_query = torch.cat((rgb_res_out[:,3:4,:,:,:],rgb_res_out[:,7:8,:,:,:],rgb_res_out[:,11:12,:,:,:],rgb_res_out[:,15:16,:,:,:]),1).reshape(B*4,512,8,8)#torch.Size([10, 4, 512, 8, 8])
-            res_support = torch.cat((rgb_res_out[:,0:3,:,:,:],rgb_res_out[:,4:7,:,:,:],rgb_res_out[:,8:11,:,:,:],rgb_res_out[:,12:15,:,:,:]),1).reshape(B*(N-4),512,8,8)#torch.Size([10, 12, 512, 8, 8])
-            former_query = self.conv2d_query(res_query).reshape(B,4,64,4096)  #torch.Size([10, 4, 64, 4096])
-            former_support = self.conv2d_support(res_support).reshape(B,N-4,-1)  #torch.Size([10, 12, 4096])
+            res_query = torch.cat((rgb_res_out[:,3:4,:,:,:],rgb_res_out[:,7:8,:,:,:],rgb_res_out[:,11:12,:,:,:],rgb_res_out[:,15:16,:,:,:]),1).reshape(B*4,512,8,8)
+            res_support = torch.cat((rgb_res_out[:,0:3,:,:,:],rgb_res_out[:,4:7,:,:,:],rgb_res_out[:,8:11,:,:,:],rgb_res_out[:,12:15,:,:,:]),1).reshape(B*(N-4),512,8,8)
+            former_query = self.conv2d_query(res_query).reshape(B,4,64,4096)  
+            former_support = self.conv2d_support(res_support).reshape(B,N-4,-1)  
 
         
-        former_out = self.GRU_Transformer(former_support, former_query, bottleneck_fea) #torch.Size([16, 128, 128])
+        former_out = self.GRU_Transformer(former_support, former_query, bottleneck_fea) 
         ################################################################################################
         out_ =  torch.cat((former_out,scnn_out_Feats),1)
-        predict = self.snn_former_fc(out_)   ## torch.Size([8, 800, 72, 72])
+        predict = self.snn_former_fc(out_)   
         # print('self.proj : ',self.snn_former_fc[0].weight)
 
         return predict 
@@ -399,9 +392,9 @@ class GRU_Transformer(nn.Module):
 
 
     def forward(self, former_support, former_query,bottleneck_fea):
-        #rgb_input.shape #torch.Size([10, 8, 4096])
+        
         support_B,support_N, support_dim = former_support.shape #torch.Size([10, 12, 4096])
-        # query_B,query_N_Clip, query_N_Token, query_dim = former_query.shape   #torch.Size([10, 4, 64, 4096])
+   
         clip_gap = support_N /self.clip_n
 
         num_gap = int(clip_gap)
@@ -458,7 +451,7 @@ class GRU_Attention(nn.Module):
 
 
     def forward(self, former_support_clip,former_query_clip, temple_memcach):
-        temple_kv = torch.cat((temple_memcach.unsqueeze(1),former_support_clip),1) #torch.Size([10, 4, 4096])
+        temple_kv = torch.cat((temple_memcach.unsqueeze(1),former_support_clip),1) 
 
         temple_q = former_query_clip #torch.Size([10, 64, 4096])
 
