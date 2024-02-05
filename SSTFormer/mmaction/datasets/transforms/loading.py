@@ -1412,11 +1412,11 @@ class RawFrameDecode(BaseTransform):
                 raise NotImplementedError
         #############################################################################################################
         point_frame_all = list()
-        point_frame_dir = '......'+ directory[38:]  #poker_20
-        # point_frame_dir = directory[:-3]+'aps' #hardvs
+        Event_Tensor_dir = '......'+ directory[38:]  #poker_20
+        # Event_Tensor_dir = directory[:-3]+'aps' #hardvs
         
 
-        fileLIST = os.listdir(point_frame_dir)
+        fileLIST = os.listdir(Event_Tensor_dir)
         fileLIST.sort()
         total_frames_point= len(fileLIST)
 
@@ -1428,7 +1428,7 @@ class RawFrameDecode(BaseTransform):
 
         for i, idx in enumerate(frames_point_inds):
 
-            data_path = osp.join(point_frame_dir, fileLIST[idx])
+            data_path = osp.join(Event_Tensor_dir, fileLIST[idx])
             load_data = np.load(data_path, allow_pickle=True)
             point_frames = load_data['point_frames']
             point_frame_all.append(point_frames)
