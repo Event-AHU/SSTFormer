@@ -84,12 +84,12 @@ Path of dataset labels:
 ## Train & Test
 ```
 SSTFormer:
-python tools/train.py configs/recognition/SSTFormer/SSTFormer.py --work-dir work_dirs/SSTFormer  --seed 0 --deterministic
-python tools/test.py configs/recognition/SSTFormer/SSTFormer.py  work_dirs/SSTFormer/checkpoint --eval top_k_accuracy 
+train_SSTFormer.sh
+test_SSTFormer.sh
+
 
 SpikingF-MST:
-cd SpikingF_MST
-sh train.sh
+sh train_SpikingFMST.sh
 ```
 
 
