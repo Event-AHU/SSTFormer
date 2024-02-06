@@ -56,25 +56,21 @@ pip3 install -e .
 SSTFormer：
 
 The path of Rgb data, in /SSTFormer/configs/recognition/SSTFormer/SSTFormer.py, fill in the path of RGB data and the path of dataset labels in the following figure.
-
 <img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/SSTFormer_RGB.jpg" width="300">
 Path of event data，in SSTFormer/SSTFormer/mmaction/datasets/transforms/loading.py
-
 <img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/SSTFormer_Event.jpg" width="400">
 Please note that a portion of the RGB data path has been truncated here to ensure that the path you added is correct.
+
 
 
 
 SpikingF_MST：
 
 Path of event data，in SpikingF_MST/train.py
-
 <img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/SpikingF_MST_Event.jpg" width="400">
 Path of Rgb data, in SpikingF_MST/train.py
-
 <img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/SpikingF_MST_RGB.jpg" width="400">
 Path of dataset labels, in SpikingF_MST/train.py
-
 <img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/SpikingF_MST_trainlabels.jpg" width="400">
 <img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/SpikingF_MST_testlabels.jpg" width="400">
 
