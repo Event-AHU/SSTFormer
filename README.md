@@ -68,7 +68,7 @@ Please note that a portion of the RGB data path has been truncated here to ensur
 SpikingF_MST：
 Path of event data，in SpikingF_MST/train.py
 
-<img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/SpikingF_MST_Event.jpg" width="400">
+<img src="https://github.com/Event-AHU/SSTFormer/blob/main/figures/SpikingF_MST_Event.jpg" width="300">
 
 Path of Rgb data, in SpikingF_MST/train.py
 
