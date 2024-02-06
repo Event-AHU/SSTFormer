@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python tools/test.py configs/recognition/SSTFormer/SSTFormer.py  work_dirs/SSTFormer/checkpoint --eval top_k_accuracy 
