@@ -225,10 +225,10 @@ class VideoDataset(data.Dataset):
 
     def get(self, record, indices):
         ##################################################################################################################################################
-        Event_Tensor_dir = 'HARDVS_point_frames_12/'+record.path
+        EventTensor_dir = 'HARDVS_point_frames_12/'+record.path
         # video_frames_path.sort()
         images = list()
-        fileLIST = os.listdir(Event_Tensor_dir)
+        fileLIST = os.listdir(EventTensor_dir)
         fileLIST.sort()
         total_frames_point= len(fileLIST)
 
@@ -238,7 +238,7 @@ class VideoDataset(data.Dataset):
         frames_point_inds = np.mod(frames_point_inds,total_frames_point)
 
         for i, idx in enumerate(frames_point_inds):
-            data_path = osp.join(Event_Tensor_dir, fileLIST[idx])
+            data_path = osp.join(EventTensor_dir, fileLIST[idx])
             load_data = np.load(data_path, allow_pickle=True)
             point_frames = load_data['point_frames']
             point_frames = point_frames[np.newaxis, :]
