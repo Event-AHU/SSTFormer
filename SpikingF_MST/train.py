@@ -225,7 +225,7 @@ class VideoDataset(data.Dataset):
 
     def get(self, record, indices):
         ##################################################################################################################################################
-        eventtensor_dir = 'HARDVS_point_frames_12/'+record.path
+        eventtensor_dir = '.../PokerEvent/'+record.path
         # video_frames_path.sort()
         images = list()
         fileLIST = os.listdir(eventtensor_dir)
@@ -246,7 +246,7 @@ class VideoDataset(data.Dataset):
         images = np.concatenate(images,axis=0)
         images = torch.tensor(images)  #torch.Size([16, 346, 260, 12])
         ##################################################################################################################################################
-        rgb_dir  = 'HARDVS/rawframes/'+record.path+record.path[10:]+'_aps'
+        rgb_dir  = '.../Poker_rgbframes/'+record.path
         rgb_images = list()
         fileLIST_rgb = os.listdir(rgb_dir)
         fileLIST_rgb.sort()
@@ -278,7 +278,7 @@ def train_data_loader(data_set):
                                                        GroupRandomHorizontalFlip(),
                                                        Stack(),
                                                        ToTorchFormatTensor()])
-    train_data = VideoDataset(list_file="HARDVS/HarDvs_list/train_label.txt",
+    train_data = VideoDataset(list_file=".../..../train_label.txt",
                               # num_segments=16,
                               num_segments=16,
                               duration=1,
@@ -294,7 +294,7 @@ def test_data_loader(data_set):
                                                        Stack(),
                                                        ToTorchFormatTensor()])
     # test_transforms = torchvision.transforms.Compose([ToTorchFormatTensor()])
-    test_data = VideoDataset(list_file="HARDVS/HarDvs_list/test_label.txt",
+    test_data = VideoDataset(list_file=".../..../test_label.txt",
                              # num_segments=16,
                              num_segments=16,
                              duration=1,
