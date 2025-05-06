@@ -116,13 +116,14 @@ Our code is implemented based on
 
 ## Reference 
 ```
-@misc{wang2023sstformer,
+@misc{wang2025sstformer,
       title={SSTFormer: Bridging Spiking Neural Network and Memory Support Transformer for Frame-Event based Recognition}, 
-      author={Xiao Wang and Zongzhen Wu and Yao Rong and Lin Zhu and Bo Jiang and Jin Tang and Yonghong Tian},
-      year={2023},
+      author={Xiao Wang and Yao Rong and Zongzhen Wu and Lin Zhu and Bo Jiang and Jin Tang and Yonghong Tian},
+      year={2025},
       eprint={2308.04369},
       archivePrefix={arXiv},
-      primaryClass={cs.CV}
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2308.04369}, 
 }
 ```
 
